@@ -36,4 +36,20 @@ public class Jugador extends Entidad{
     public void setBotiquin(boolean botiquin) {
         this.botiquin = botiquin;
     }
+
+    public int getArmas() {
+        return armas;
+    }
+
+    public void setArmas(int armas) {
+        this.armas = armas;
+    }
+
+    public int getProtecciones() {
+        return protecciones;
+    }
+
+    public void setProtecciones(int protecciones) {
+        this.protecciones = protecciones;
+    }
 }
