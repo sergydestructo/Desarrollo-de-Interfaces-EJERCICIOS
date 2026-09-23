@@ -5,16 +5,16 @@ public class Sala {
     private int numSala;
     private int intentosBusqueda;
     private int numZombies;
-    private Zombie javi;
-    private Jugador elio;
+    private Zombie zombie;
+    private Jugador jugador;
 
     public Sala(int dificultad) {
         this.maxSalas = 5 * dificultad;
         this.numSala = 1;
         this.intentosBusqueda = 3;
         this.numZombies = 0;
-        this.javi = crearZombie();
-        this.elio = new Jugador();
+        this.zombie = crearZombie();
+        this.jugador = new Jugador();
     }
 
     private Zombie crearZombie() {
@@ -38,18 +38,18 @@ public class Sala {
                 System.out.println("sombi 2");
             }
         } else if (resultado <= 90) {
-            if (elio.isBotiquin()) {
+            if (jugador.isBotiquin()) {
                 System.out.println("Encuentras un botiquín pero ya tienes uno");
             } else {
                 System.out.println("Encuentras un botiquín");
-                elio.setBotiquin(true);
+                jugador.setBotiquin(true);
             }
         } else if (resultado <= 95) {
             System.out.println("Encuentras una protección");
-            elio.setProtecciones(elio.getProtecciones() + 1);
+            jugador.setProtecciones(jugador.getProtecciones() + 1);
         } else {
             System.out.println("Encuentras un arma");
-            elio.setArmas(elio.getArmas() + 1);
+            jugador.setArmas(jugador.getArmas() + 1);
         }
     }
 
@@ -62,22 +62,22 @@ public class Sala {
     public void combate() {
         int turno = 0;
 
-        while (javi.getVidaActual() > 0 || elio.getVidaActual() > 0) {
+        while (zombie.getVidaActual() > 0 || jugador.getVidaActual() > 0) {
             turno++;
             System.out.println("TURNO " + turno);
 
-            int ataqueJugador = elio.atacar();
-            javi.setVidaActual(javi.getVidaActual() - ataqueJugador);
+            int ataqueJugador = jugador.atacar();
+            zombie.setVidaActual(zombie.getVidaActual() - ataqueJugador);
             System.out.println("El sombi recibe " + ataqueJugador + " puntos de daño");
 
-            if (javi.getVidaActual() <= 0) {
+            if (zombie.getVidaActual() <= 0) {
                 System.out.println("sa morio");
                 numZombies--;
             } else {
                 System.out.println("No sa morio");
 
-                int ataqueZombie = javi.atacar() - elio.getProtecciones();
-                elio.setVidaActual(elio.getVidaActual() - ataqueZombie);
+                int ataqueZombie = zombie.atacar() - jugador.getProtecciones();
+                jugador.setVidaActual(jugador.getVidaActual() - ataqueZombie);
                 System.out.println("Recibes " + ataqueZombie + " puntos de daño");
             }
         }
@@ -101,12 +101,12 @@ public class Sala {
         return intentosBusqueda;
     }
 
-    public Jugador getElio() {
-        return elio;
+    public Jugador getJugador() {
+        return jugador;
     }
 
-    public void setElio(Jugador elio) {
-        this.elio = elio;
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
     }
 
     public int getNumZombies() {

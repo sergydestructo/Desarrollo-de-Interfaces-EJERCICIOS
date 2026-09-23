@@ -11,15 +11,8 @@ public class UI {
     public void empezarPartida() {
         selectorDificultad();
 
-        while (sala.getNumSala() <= sala.getMaxSalas() || sala.getElio().getVidaActual() > 0) {
-            if (sala.getNumZombies() != 0) {
-                System.out.println("Hay " + sala.getNumZombies() + "Zombie(s) en la sala");
-                System.out.println("1. Atacar");
-                combate();
-            } else {
-                System.out.println("1. Buscar por la habitación");
-                System.out.println("2. Avanzar a la siguiente habitación");
-            }
+        while (sala.getNumSala() <= sala.getMaxSalas() || sala.getJugador().getVidaActual() > 0) {
+            mostrarOpciones();
         }
     }
 
@@ -52,6 +45,20 @@ public class UI {
         }
 
         setSala(dificultad);
+    }
+
+    public void mostrarOpciones() {
+        if (sala.getNumZombies() != 0) {
+            System.out.println("Hay " + sala.getNumZombies() + "Zombie(s) en la sala");
+            System.out.println("1. Atacar");
+            combate();
+        } else {
+            if (sala.getNumSala() < sala.getMaxSalas()) {
+                System.out.println("1. Avanzar a la siguiente sala");
+            } else {
+                System.out.println("1. Salir de la mansión");
+            }
+        }
     }
 
     private void setSala(int dificultad) {
