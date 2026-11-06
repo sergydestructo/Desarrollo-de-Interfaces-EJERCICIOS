@@ -45,25 +45,31 @@ public class Ejercicio3 extends javax.swing.JFrame {
                         .addGap(150, 150, 150)
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(55, 55, 55)
+                        .addGap(178, 178, 178)
                         .addComponent(jLabel1)))
                 .addContainerGap(155, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(jLabel1)
-                .addGap(45, 45, 45)
+                .addGap(129, 129, 129)
                 .addComponent(jButton1)
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addGap(48, 48, 48)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        jLabel1.setText("HAS PULSAO EL BOTONACO");
+        
+        
+        if (jLabel1.getText().equals("")) {
+            jLabel1.setText("HAS PULSAO EL BOTONACO");
+        } else {
+            jLabel1.setText("");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
