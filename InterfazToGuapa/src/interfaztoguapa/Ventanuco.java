@@ -34,12 +34,16 @@ public class Ventanuco extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        jLabel2 = new javax.swing.JLabel();
         BarraSuperior = new javax.swing.JPanel();
         BotonCerrar = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         Pantalla = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        ParteIzquierda = new javax.swing.JPanel();
+        ParteDerecha = new interfaztoguapa.PanelConFondo();
+        GamersParadise = new javax.swing.JLabel();
+
+        jLabel2.setText("jLabel2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 0));
@@ -90,41 +94,27 @@ public class Ventanuco extends javax.swing.JFrame {
         Pantalla.setBackground(new java.awt.Color(0, 0, 0));
         java.awt.GridBagLayout PantallaLayout1 = new java.awt.GridBagLayout();
         PantallaLayout1.columnWeights = new double[] {0.6, 0.4};
+        PantallaLayout1.rowWeights = new double[] {1.0, 1.0};
         Pantalla.setLayout(PantallaLayout1);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        Pantalla.add(ParteIzquierda, gridBagConstraints);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(100, 100));
+        ParteDerecha.setMinimumSize(new java.awt.Dimension(100, 100));
+        ParteDerecha.setPreferredSize(new java.awt.Dimension(500, 500));
+        ParteDerecha.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        GamersParadise.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        GamersParadise.setForeground(new java.awt.Color(255, 51, 102));
+        GamersParadise.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        GamersParadise.setText("<html><div style='text-align: center;'>Gamers<br>Paradise</div></html>");
+        GamersParadise.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 15, 15, 1));
+        GamersParadise.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        ParteDerecha.add(GamersParadise, java.awt.BorderLayout.PAGE_START);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        Pantalla.add(jPanel1, gridBagConstraints);
-
-        jPanel2.setPreferredSize(new java.awt.Dimension(100, 100));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 340, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        Pantalla.add(jPanel2, gridBagConstraints);
+        Pantalla.add(ParteDerecha, gridBagConstraints);
 
         getContentPane().add(Pantalla, java.awt.BorderLayout.CENTER);
 
@@ -184,9 +174,11 @@ public class Ventanuco extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BarraSuperior;
     private javax.swing.JPanel BotonCerrar;
+    private javax.swing.JLabel GamersParadise;
     private javax.swing.JPanel Pantalla;
+    private javax.swing.JPanel ParteDerecha;
+    private javax.swing.JPanel ParteIzquierda;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
