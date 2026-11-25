@@ -37,9 +37,12 @@ public class Ventanuco extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         BarraSuperior = new javax.swing.JPanel();
         BotonCerrar = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        X = new javax.swing.JLabel();
         Pantalla = new javax.swing.JPanel();
         ParteIzquierda = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        IniciarSesion = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         ParteDerecha = new interfaztoguapa.PanelConFondo();
         GamersParadise = new javax.swing.JLabel();
 
@@ -80,12 +83,12 @@ public class Ventanuco extends javax.swing.JFrame {
         });
         BotonCerrar.setLayout(new java.awt.GridLayout(1, 1));
 
-        jLabel1.setBackground(new java.awt.Color(255, 51, 153));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 51, 102));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("X");
-        BotonCerrar.add(jLabel1);
+        X.setBackground(new java.awt.Color(255, 51, 153));
+        X.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        X.setForeground(new java.awt.Color(255, 51, 102));
+        X.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        X.setText("X");
+        BotonCerrar.add(X);
 
         BarraSuperior.add(BotonCerrar);
 
@@ -93,9 +96,32 @@ public class Ventanuco extends javax.swing.JFrame {
 
         Pantalla.setBackground(new java.awt.Color(0, 0, 0));
         java.awt.GridBagLayout PantallaLayout1 = new java.awt.GridBagLayout();
-        PantallaLayout1.columnWeights = new double[] {0.6, 0.4};
+        PantallaLayout1.columnWeights = new double[] {0.65, 0.35};
         PantallaLayout1.rowWeights = new double[] {1.0, 1.0};
         Pantalla.setLayout(PantallaLayout1);
+
+        ParteIzquierda.setBackground(new java.awt.Color(0, 0, 0));
+        ParteIzquierda.setLayout(new java.awt.GridLayout(6, 0));
+
+        jPanel1.setBackground(new java.awt.Color(102, 102, 102));
+        ParteIzquierda.add(jPanel1);
+
+        IniciarSesion.setFont(FuenteRoboto.cargarRobotoBold(24f)
+        );
+        IniciarSesion.setForeground(new java.awt.Color(255, 51, 102));
+        IniciarSesion.setText("INICIAR SESIÓN");
+        IniciarSesion.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 20, 1, 1));
+        ParteIzquierda.add(IniciarSesion);
+
+        jTextField1.setFont(FuenteRoboto.cargarRobotoBold(12f)
+        );
+        jTextField1.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField1.setText("Ingrese su nombre de usuario");
+        jTextField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        jTextField1.setMinimumSize(new java.awt.Dimension(64, 20));
+        jTextField1.setPreferredSize(new java.awt.Dimension(179, 20));
+        ParteIzquierda.add(jTextField1);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         Pantalla.add(ParteIzquierda, gridBagConstraints);
@@ -104,7 +130,7 @@ public class Ventanuco extends javax.swing.JFrame {
         ParteDerecha.setPreferredSize(new java.awt.Dimension(500, 500));
         ParteDerecha.setLayout(new java.awt.BorderLayout());
 
-        GamersParadise.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        GamersParadise.setFont(FuenteRoboto.cargarRobotoBold(48f));
         GamersParadise.setForeground(new java.awt.Color(255, 51, 102));
         GamersParadise.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         GamersParadise.setText("<html><div style='text-align: center;'>Gamers<br>Paradise</div></html>");
@@ -175,10 +201,13 @@ public class Ventanuco extends javax.swing.JFrame {
     private javax.swing.JPanel BarraSuperior;
     private javax.swing.JPanel BotonCerrar;
     private javax.swing.JLabel GamersParadise;
+    private javax.swing.JLabel IniciarSesion;
     private javax.swing.JPanel Pantalla;
     private javax.swing.JPanel ParteDerecha;
     private javax.swing.JPanel ParteIzquierda;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel X;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
