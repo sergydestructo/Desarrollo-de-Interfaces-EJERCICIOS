@@ -4,17 +4,20 @@
  */
 package interfaztoguapa;
 
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author Alumno Mañana
  */
 public class InterfazToGuapa {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Se usa SwingUtilities.invokeLater para ejecutar la interfaz de forma segura
+        SwingUtilities.invokeLater(() -> {
+            Ventanuco ventana = new Ventanuco();
+            ventana.setVisible(true);
+        });
     }
     
 }
